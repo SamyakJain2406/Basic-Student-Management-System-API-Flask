@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Samyak Jain{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
+                <a href="{{ url_for('enternew') }}" class="navbar-item">Add New Student</a>
+                <a href="{{ url_for('list') }}" class="navbar-item">Review and Edit Students</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="body-content container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <hr>
+            <p>
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="35" height="20">
+                &copy; 2023 Samyak Jain
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
