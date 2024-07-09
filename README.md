@@ -1,2 +1,4 @@
 # Basic-Student-Management-System-API
- Using Python,Flask,DB,HTML,CSS
+ Using Python,Flask,DB,HTML,CSS,SQLite
+
+
