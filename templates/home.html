@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}
+Student Flask App with CRUD
+{% endblock %}
+{% block content %}
+<section class="welcome-section">
+    <div class="container">
+        <h1 class="welcome-title">Welcome to My Student Flask App</h1>
+        <p class="welcome-subtitle">Manage student information effortlessly with our easy-to-use CRUD application.</p>
+        <div class="welcome-buttons">
+            <a href="{{ url_for('enternew') }}" class="btn btn-primary">Add New Student</a>
+            <a href="{{ url_for('list') }}" class="btn btn-secondary">Review and Edit Students</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
