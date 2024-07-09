@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}
+Edit Student
+{% endblock %}
+{% block content %}
+<section class="edit-student">
+    <div class="container">
+        <h1>Edit Student Record</h1>
+        {% for row in rows %}
+        <form action="{{ url_for('editrec') }}" method="POST" class="edit-form">
+            <h3 style="color:blue">Student ID: {{ row['rowid'] }}</h3>
+            <input type="hidden" name="rowid" value="{{ row['rowid'] }}">
+            
+            <div class="form-group">
+                <label for="nm">Name</label>
+                <input type="text" id="nm" name="nm" value="{{ row['name'] }}" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="add">Address</label>
+                <input type="text" id="add" name="add" value="{{ row['addr'] }}" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" value="{{ row['city'] }}" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" name="zip" value="{{ row['zip'] }}" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
